@@ -27,5 +27,25 @@
         </div>
     </div>
 
+    <div th:fragment="hashmap-iterate" class="container body-content">
+
+        <div th:if="${jobs} and ${jobs.size()}">
+
+            <tr th:each="job: ${jobs}">
+                <table class="job-listing">
+                    <tr th:each="instance : ${job}">
+                    <td>
+                        <td th:text="${instance.key}">key</td>
+                        <td th:text="${instance.value}">value</td>
+                    </td>
+                    </tr>
+
+                </table>
+            </tr>
+        </div>
+    </div>
+
+
 </body>
+
 </html>
